@@ -7,8 +7,8 @@ import { Feather } from '@expo/vector-icons';
 import Register from '../Pages/Register/Register';
 import Login from '../Pages/Login';
 import Home from '../Pages/Home/index.js';
-//import Home from '../Pages/Home';
-//import forgotPassword from '../Pages/Login';
+import CalendarScreen from '../Pages/Calendar';
+import CreatTaskScreen from '../Pages/Add task';
 //import Register from '../Pages/Register';
 //import Profile from '../Pages/Profile';
 //import Notifications from '../Pages/Notifications';
@@ -35,13 +35,24 @@ function MyTabs() {
           }}
       />
       <Tab.Screen
-        name='Register'
-        component={Register}
+        name='Calendar'
+        component={CalendarScreen}
         options = {{
-          title: 'Chat',
+          title: 'calendário',
           headerShown: false,
           tabBarIcon: ({color, size})=> (
-            <Feather name='message-circle' color="white" size={25}/>
+            <Feather name='calendar' color="white" size={25}/>
+          )
+          }}
+      />
+      <Tab.Screen
+        name='Add Task'
+        component={CreatTaskScreen}
+        options = {{
+          title: 'Add Tarefa',
+          headerShown: false,
+          tabBarIcon: ({color, size})=> (
+            <Feather name='plus' color="white" size={25}/>
           )
           }}
       />
@@ -89,7 +100,14 @@ export default function Routes(){
             headerShown: false
         }}
       />
-
+      <Drawer.Screen
+        name = 'CreatTaskScreen'
+        component = {CreatTaskScreen}
+        options = {{
+            title: 'Add tarefa ',
+            headerShown: false
+        }}
+      />
       
     </Drawer.Navigator>
   );

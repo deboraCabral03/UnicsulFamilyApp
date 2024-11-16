@@ -1,6 +1,6 @@
 import { Text, SafeAreaView, StyleSheet, View } from 'react-native';
 import { Feather, AntDesign } from "@expo/vector-icons";
-
+import React, { useState } from 'react';
 
 export default function Home({ navigation }) {
   return (
